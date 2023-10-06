@@ -1,61 +1,45 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass')); // Вказуємо компілятор SASS
-const autoprefixer = require('gulp-autoprefixer'); // Додаємо імпорт autoprefixer
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 
-//копіювання HTML файлів в папку dist
-gulp.task ( "html", function () {
- return gulp.src ( "src / *. html")
- .pipe (gulp.dest ( "dist"));
+// Копіювання HTML файлів в папку dist
+gulp.task('html', function () {
+  return gulp.src('app/*.html') // Змінено шлях до HTML файлів
+    .pipe(gulp.dest('dist'));
 });
 
-// Задача для компіляції SASS в CSS
+// Компіляція SASS в CSS
 gulp.task('sass', function () {
-  return gulp.src('src/sass/*.sass') // Вхідні файли SASS
-    .pipe(sass().on('error', sass.logError)) // Компіляція SASS в CSS
-    .pipe(autoprefixer({ // Використовуємо autoprefixer
+  return gulp.src('app/sass/*.sass') // Змінено шлях до SASS файлів
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions'],
       cascade: false
-    })) // Додавання префіксів
-    .pipe(cssnano()) // Мінімізація CSS
-    .pipe(rename({ suffix: '.min' })) // Перейменування файлу
-    .pipe(gulp.dest('dist/css')); // Вихідна папка для CSS
-});
-
-// Задача для об'єднання і мінімізації JS-файлів
-gulp.task('scripts', function () {
-  return gulp.src('src/js/*.js') // Вхідні JS-файли
-    .pipe(concat('scripts.js')) // Об'єднання файлів
-    .pipe(uglify()) // Мінімізація JavaScript
-    .pipe(rename({ suffix: '.min' })) // Перейменування файлу
-    .pipe(gulp.dest('dist/js')); // Вихідна папка для JS
-});
-
-// Задача для стиснення зображень
-gulp.task('images', async function () {
-  const imagemin = await import('gulp-imagemin'); // Динамічний імпорт для gulp-imagemin
-
-  return gulp.src('src/images/*.{jpg,jpeg,png,gif}') // Вхідні зображення
-    .pipe(imagemin.default({ // Стиснення зображень
-      progressive: true,
-      svgoPlugins: [{ removeViewBox: false }],
-      interlaced: true
     }))
-    .pipe(gulp.dest('dist/images')); // Вихідна папка для стиснутих зображень
+    .pipe(cssnano())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist/css'));
 });
 
+// Об'єднання і мінімізація JS-файлів
+gulp.task('scripts', function () {
+  return gulp.src('app/js/*.js') // Змінено шлях до JS файлів
+    .pipe(concat('scripts.js'))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist/js'));
+});
 
-// Задача для відстеження змін в файлах та виконання інших задач
+// Відстеження змін в файлах та виконання інших задач
 gulp.task('watch', function () {
-  gulp.watch('src/*.html', gulp.series('html')); // Слідкування за змінами в HTML-файлах та виклик задачі 'html'
-  gulp.watch('src/sass/*.sass', gulp.series('sass')); // Слідкування за змінами в SASS-файлах та виклик задачі 'sass'
-  gulp.watch('src/images/*.{jpg,jpeg,png,gif}', gulp.series('images')); // Слідкування за змінами в зображеннях та виклик задачі 'images'
-  gulp.watch('src/js/*.js', gulp.series('scripts')); // Слідкування за змінами в JS-файлах та виклик задачі 'scripts'
+  gulp.watch('app/*.html', gulp.series('html')); // Змінено шлях до HTML файлів
+  gulp.watch('app/sass/*.sass', gulp.series('sass')); // Змінено шлях до SASS файлів
+  gulp.watch('app/js/*.js', gulp.series('scripts')); // Змінено шлях до JS файлів
 });
 
-
-// Задача "default" і її послідовності
-gulp.task('default', gulp.parallel('html','sass', 'images', 'scripts','watch'));
+// Задача "default" та її послідовності
+gulp.task('default', gulp.parallel('html', 'sass', 'scripts', 'watch'));
