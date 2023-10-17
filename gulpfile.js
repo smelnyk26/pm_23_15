@@ -5,16 +5,16 @@ const cssnano = require('gulp-cssnano');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
 
-// Копіювання HTML файлів в папку dist
 gulp.task('html', function () {
-  return gulp.src('app/*.html') // Змінено шлях до HTML файлів
-    .pipe(gulp.dest('dist'));
+  return gulp.src('app/*.html')
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 });
 
-// Компіляція SASS в CSS
 gulp.task('sass', function () {
-  return gulp.src('app/sass/*.sass') // Змінено шлях до SASS файлів
+  return gulp.src('app/sass/*.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions'],
@@ -22,24 +22,27 @@ gulp.task('sass', function () {
     }))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
 });
 
-// Об'єднання і мінімізація JS-файлів
 gulp.task('scripts', function () {
-  return gulp.src('app/js/*.js') // Змінено шлях до JS файлів
+  return gulp.src('app/js/*.js')
     .pipe(concat('scripts.js'))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.stream());
 });
 
-// Відстеження змін в файлах та виконання інших задач
-gulp.task('watch', function () {
-  gulp.watch('app/*.html', gulp.series('html')); // Змінено шлях до HTML файлів
-  gulp.watch('app/sass/*.sass', gulp.series('sass')); // Змінено шлях до SASS файлів
-  gulp.watch('app/js/*.js', gulp.series('scripts')); // Змінено шлях до JS файлів
+gulp.task('serve', function () {
+  browserSync.init({
+    server: './app'
+  });
+
+  gulp.watch('app/*.html', gulp.series('html'));
+  gulp.watch('app/sass/*.sass', gulp.series('sass'));
+  gulp.watch('app/js/*.js', gulp.series('scripts'));
 });
 
-// Задача "default" та її послідовності
-gulp.task('default', gulp.parallel('html', 'sass', 'scripts', 'watch'));
+gulp.task('default', gulp.series('html', 'sass', 'scripts', 'serve'));
