@@ -40,9 +40,9 @@ gulp.task('serve', function () {
     server: './app'
   });
 
-  gulp.watch('app/*.html', gulp.series('html'));
-  gulp.watch('app/sass/*.sass', gulp.series('sass'));
-  gulp.watch('app/js/*.js', gulp.series('scripts'));
+  gulp.watch('app/*.html', gulp.series('html')).on('change', browserSync.reload); // Додаємо автоматичне оновлення HTML
+  gulp.watch('app/sass/*.sass', gulp.series('sass')).on('change', browserSync.reload); // Додаємо автоматичне оновлення CSS
+  gulp.watch('app/js/*.js', gulp.series('scripts')).on('change', browserSync.reload); // Додаємо автоматичне оновлення JavaScript
 });
 
 gulp.task('default', gulp.series('html', 'sass', 'scripts', 'serve'));

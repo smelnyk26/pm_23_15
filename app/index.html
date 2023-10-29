@@ -9,26 +9,68 @@
 
 <body>
   <div class="sidebar">
-    <div class="user-info"><i class="fas fa-user user-icon"></i>
-            HOANG NGUYEN
-        </div>
-        <a class="active" href = "#dashboard"><i class="fas fa-home"></i>DASHBOARD</a>
+    <div class="profile-info">
+      <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture">
+      <span class="user-name">HOANG NGUYEN</span>
+  </div>
+        <a class="active" href="javascript:void(0);" onclick="showDashboardContent()"><i class="fas fa-home"></i>DASHBOARD</a>
         <a href="#course"><i class="fas fa-book"></i>COURSE</a>
         <a href="#exam"><i class="fas fa-clock"></i>EXAM</a>
-        <a href="#q&a"><i class="fas fa-question-circle"></i>Q&A</a>
+        <a href="#q&a"><i class="fas fa-comments"></i>Q&A</a>
         <a href="#news"><i class="fas fa-newspaper"></i> NEWS</a>
+  </div>
+
+  <div class="top-bar">
+    <div class="icons">
+      <a href="#user"></a><i class="fas fa-user"></i>
+      <a href="#comment"></a><i class="fas fa-comment"></i>
+      <a href="#bell"></a> <i class="fas fa-bell"></i>
+    </div>
+    
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Логотип" class="logo">
+    </div>
+    
+    <div class="search-box">
+      <input type="text" placeholder="Type for search...">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+  
+
+<div id="content-container">
+<div class="panel_2">
+  <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture_2">
+  <div class="info">
+      <span class="user-name_2">HOANG NGUYEN</span>
+      <span class="user-category">Student<a href="#" class="learn-more">Learn more</a></span>
+      <span class="user"><i class="fas fa-medal"></i> 8,782 exp</span>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#knowledge">KNOWLEDGE</a></li>
+        <li><a href="#">COURSE</a></li>
+        <li><a href="#">EXAM</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">ACTIVITY</a></li>
+        <li><a href="#">FRIENDS</a></li>
+     </ul>
+     <div class="slider"></div>
+    </div>
+  </div>
+
 </div>
 
-<div class="main">
-    <div class="search-bar">
-        <input type="text" placeholder="Type for search">
-        <button><i class="fas fa-search"></i></button>
-    </div>
-    <div class="icons">
-      <div class="user-account"><i class="fas fa-user"></i></div>
-      <div class="message-icon"><i class="fas fa-envelope"></i></div>
-      <div class="notification-icon"><i class="fas fa-bell"></i></div>  
-    </div>
+<div class="photos-container">
+  <img src="img/tab_1.png" alt="Tab 1">
+  <img src="img/tab_2.png" alt="Tab 2">
+  <img src="img/tab_3.png" alt="Tab 3">
+</div>
+
+<div class="photos-container_2">
+  <img src="img/graph.png" alt="Graph">
+  <img_t src="img/tab_4.png" alt="Tab 4">
 </div>
 
 </body>
