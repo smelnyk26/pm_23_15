@@ -208,27 +208,29 @@ body {
   }
 
   .photos-container {
-    display: flex ; /* Зробити дітей контейнера (фотографії) рядком */
+    display: flex ; 
     margin: 20px; 
     margin-left: 180px;
   }
   
   .photos-container img {
-    width: 280px; /* Встановіть ширину фотографій, яка вам потрібна */
-    height: 280px; /* Встановіть висоту фотографій, яка вам потрібна */
+    width: 280px; 
+    height: 280px; 
     margin-left: 40px; 
   }
 
   .photos-container_2 {
-    display: flex ; /* Зробити дітей контейнера (фотографії) рядком */
+    display: flex ; 
     margin: 20px; 
     margin-left: 220px;
   }
+  
   .photos-container_2.img {
-    width: 250px; /* Встановіть ширину фотографій, яка вам потрібна */
-    height: 220px; /* Встановіть висоту фотографій, яка вам потрібна */
+    width: 250px; 
+    height: 220px; 
   }
-  .photos-container_2.img_t {
-    width: 600px; /* Встановіть ширину фотографій, яка вам потрібна */
-    height: 220px; /* Встановіть висоту фотографій, яка вам потрібна */
+
+  .photos-container_2.img {
+    width: 600px; 
+    height: 220px; 
   }
