@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -13,8 +14,7 @@
       <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture">
       <span class="user-name">HOANG NGUYEN</span>
   </div>
-        <a class="active" href="javascript:void(0);" onclick="showDashboardContent()"><i class="fas fa-home"></i>DASHBOARD</a>
-        <a href="#course"><i class="fas fa-book"></i>COURSE</a>
+<a class="active" href="javascript:void(0);" onclick="showDashboardContent()"><i class="fas fa-home"></i>DASHBOARD</a>        <a href="#course"><i class="fas fa-book"></i>COURSE</a>
         <a href="#exam"><i class="fas fa-clock"></i>EXAM</a>
         <a href="#q&a"><i class="fas fa-comments"></i>Q&A</a>
         <a href="#news"><i class="fas fa-newspaper"></i> NEWS</a>
@@ -38,40 +38,147 @@
   </div>
   
 
-<div id="content-container">
-<div class="panel_2">
-  <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture_2">
-  <div class="info">
-      <span class="user-name_2">HOANG NGUYEN</span>
-      <span class="user-category">Student<a href="#" class="learn-more">Learn more</a></span>
-      <span class="user"><i class="fas fa-medal"></i> 8,782 exp</span>
+  <script src="script.js"></script>
+
+  <div id="content-container">
+    <div class="panel_2">
+      <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture_2">
+      
+      <div class="info">
+          <span class="user-name_2">HOANG NGUYEN</span>
+          <span class="user-category">Student<a href="#" class="learn-more">Learn more</a></span>
+          <span class="user"><i class="fas fa-medal"></i> 8,782 exp</span>
+        </div>
+    
+        <div class="menu">
+          <ul>
+            <li><a href="#knowledge">KNOWLEDGE</a></li>
+            <li><a href="#">COURSE</a></li>
+            <li><a href="#">EXAM</a></li>
+            <li><a href="#">Q&A</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">ACTIVITY</a></li>
+            <li><a href="#">FRIENDS</a></li>
+         </ul>
+         <div class="slider"></div>
+        </div>
+    
+        <div class="logout" id="logout-icon">
+          <i class="fas fa-pencil-alt"></i>
+          <i class="fas fa-sign-out-alt"></i>
+      </div>
+      </div>
+    
     </div>
-    <div class="menu">
-      <ul>
-        <li><a href="#knowledge">KNOWLEDGE</a></li>
-        <li><a href="#">COURSE</a></li>
-        <li><a href="#">EXAM</a></li>
-        <li><a href="#">Q&A</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">ACTIVITY</a></li>
-        <li><a href="#">FRIENDS</a></li>
-     </ul>
-     <div class="slider"></div>
+    
+     <div class="tabs">
+      <button class="tab" onclick="openTab('tab1')">
+        <span class="tab-number">12</span>
+        <span class="tab-text">DONE COURSE</span>
+      </button>
+
+      <button class="tab" onclick="openTab('tab2')">
+        <span class="tab-number">3</span>
+        <span class="tab-text"> UNFINISHED COURSE</span>
+      </button>
     </div>
-  </div>
 
-</div>
+    <div id="tab1" class="tab-content">
+      <table class="custom-table" id="table1">
+            <tr>
+                <td>Basic for UX Designer</td>   
+            </tr>
+            <tr>
+                <td>10 steps to improve yor wireframe</td>
+            </tr>
+            <tr>
+                <td>A Better Way To Request App Ratings</td>
+            </tr>
+             <tr>
+                <td>How To Speed Up Your WordPress Website</td>
+            </tr>
+        </table>
+    </div>
 
-<div class="photos-container">
-  <img src="img/tab_1.png" alt="Tab 1">
-  <img src="img/tab_2.png" alt="Tab 2">
-  <img src="img/tab_3.png" alt="Tab 3">
-</div>
+    <div id="tab2" class="tab-content">
+      <table class="custom-table" id="table2">
+            <tr>
+                <td>1</td>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+        </table>
+    </div>
 
-<div class="photos-container_2">
-  <img src="img/graph.png" alt="Graph">
-  <img src="img/tab_4.png" alt="Tab 4">
-</div>
+
+    <div class="tabs">
+      <button class="tab_2" onclick="openTab('tab3')">
+        <span class="tab-number">27</span>
+        <span class="tab-text">ASKING QUESTION</span>
+      </button>
+
+      <button class="tab_2" onclick="openTab('tab4')">
+        <span class="tab-number">7</span>
+        <span class="tab-text"> ANSWERED QUESTION</span>
+      </button>
+    </div>
+
+    <div id="tab3" class="tab-content_2">
+      <table class="custom-table" id="table3">
+            <tr>
+                <td>Basic for UX Designer</td>   
+            </tr>
+            
+        </table>
+    </div>
+
+    <div id="tab4" class="tab-content_2">
+      <table class="custom-table" id="table4">
+            <tr>
+                <td>1</td>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tables;
+            tabContent = document.getElementsByClassName("tab-content");
+            tables = document.getElementsByClassName("custom-table");
+
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            for (i = 0; i < tables.length; i++) {
+                tables[i].style.display = "none";
+            }
+
+            // Видаляємо клас 'active' з усіх вкладок
+            var tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById("table" + tabName.slice(-1)).style.display = "table";
+
+            // Додаємо клас 'active' до вибраної вкладки
+            document.querySelector(".tabs .tab[data-tab='" + tabName + "']").classList.add("active");
+        }
+  </script>
+    
+    <div class="photos-container_2">
+      <img src="img/graph.png" alt="Graph">
+      <img src="img/tab_4.png" alt="Tab 4">
+    </div>
 
 </body>
 </html>
