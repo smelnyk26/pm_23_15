@@ -3,182 +3,121 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
   </head>
 
 <body>
-  <div class="sidebar">
+ <div class="sidebar">
     <div class="profile-info">
       <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture">
       <span class="user-name">HOANG NGUYEN</span>
-  </div>
-<a class="active" href="javascript:void(0);" onclick="showDashboardContent()"><i class="fas fa-home"></i>DASHBOARD</a>        <a href="#course"><i class="fas fa-book"></i>COURSE</a>
-        <a href="#exam"><i class="fas fa-clock"></i>EXAM</a>
-        <a href="#q&a"><i class="fas fa-comments"></i>Q&A</a>
-        <a href="#news"><i class="fas fa-newspaper"></i> NEWS</a>
-  </div>
-
-  <div class="top-bar">
-    <div class="icons">
-      <a href="#user"></a><i class="fas fa-user"></i>
-      <a href="#comment"></a><i class="fas fa-comment"></i>
-      <a href="#bell"></a> <i class="fas fa-bell"></i>
     </div>
-    
-    <div class="logo-container">
-      <img src="img/logo.png" alt="Логотип" class="logo">
-    </div>
-    
-    <div class="search-box">
-      <input type="text" placeholder="Type for search...">
-      <button><i class="fas fa-search"></i></button>
-    </div>
-  </div>
-  
+       <button class="btn-toggle" id="btn1" onclick="changeClass(0)"> <div class="rectangle1"></div> DASHBOARD </button>
+       <button class="btn-toggle" id="btn2" onclick="changeClass(1)"> <div class="rectangle1"></div> COURSE </button>
+       <button class="btn-toggle" id="btn3" onclick="changeClass(2)"> <div class="rectangle1"></div> EXAM </button>
+       <button class="btn-toggle" id="btn4" onclick="changeClass(3)"> <div class="rectangle1"></div> Q&A </button>
+       <button class="btn-toggle" id="btn5" onclick="changeClass(4)"> <div class="rectangle1"></div> NEWS </button>
+ </div>
 
-  <script src="script.js"></script>
+  <div id="page-content" class="page-content" style="display: none;">
 
-  <div id="content-container">
-    <div class="panel_2">
-      <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture_2">
+    <div class="top-bar">
+        <button class="btn" id="btn6">
+            <span class = "icon" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+              </svg>
+            </span>
+        </button>
+
+        <button class="btn" id="btn7">
+        <span class = "icon" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2"/>
+          </svg>
+            </span>
+        </button>
+
+        <button class="btn" id="btn8">
+          <span class = "icon" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+            </svg>
+          </span>
+        </button>
+
+        <div class="logo-container">
+          <img src="img/logo.png" alt="Логотип" class="logo">
+        </div>
+        
+        <div class="search-box">
+          <input type="text" placeholder="Type for search...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <div class="content-container">
+      <div class="panel_2">
+        <img src="img/photo_user.png" alt="Фото користувача" class="profile-picture_2">
       
-      <div class="info">
+        <div class="info">
           <span class="user-name_2">HOANG NGUYEN</span>
-          <span class="user-category">Student<a href="#" class="learn-more">Learn more</a></span>
+          <span class="user-category">Student<a href="#" class="learn-more"> Learn more</a></span>
           <span class="user"><i class="fas fa-medal"></i> 8,782 exp</span>
         </div>
-    
-        <div class="menu">
-          <ul>
-            <li><a href="#knowledge">KNOWLEDGE</a></li>
-            <li><a href="#">COURSE</a></li>
-            <li><a href="#">EXAM</a></li>
-            <li><a href="#">Q&A</a></li>
-            <li><a href="#">NEWS</a></li>
-            <li><a href="#">ACTIVITY</a></li>
-            <li><a href="#">FRIENDS</a></li>
-         </ul>
-         <div class="slider"></div>
+        
+        <div class="menu"></div>
+        <button class="btn-toggle-2" id="btn2_1" onclick="showContent(0)"> <div class="rectangle2"></div> KNOWLEDGE </button>
+        <button class="btn-toggle-2" id="btn2_2" onclick="showContent(1)"> <div class="rectangle2"></div> COURSE </button>
+        <button class="btn-toggle-2" id="btn2_3" onclick="showContent(2)"> <div class="rectangle2"></div> EXAM </button>
+        <button class="btn-toggle-2" id="btn2_4" onclick="showContent(3)"> <div class="rectangle2"></div> Q&A </button>
+        <button class="btn-toggle-2" id="btn2_5" onclick="showContent(4)"> <div class="rectangle2"></div> NEWS </button>
+        <button class="btn-toggle-2" id="btn2_6" onclick="showContent(5)"> <div class="rectangle2"></div> ACTIVITY </button>
+        <button class="btn-toggle-2" id="btn2_7" onclick="showContent(6)"> <div class="rectangle2"></div> FRIENDS </button>
+      </div>
+    </div>
+
+<div id="page-content3" class="page-content-2" style="display: none;">
+  <div id="tabs">
+    <ul class="tabs-navigation">
+        <li><a href="#tab-1">DONE COURSE</a></li>
+        <li><a href="#tab-2">UNFINISHED COURSE</a></li>
+        <li><a href="#tab-3">Таб 3</a></li>
+        <li><a href="#tab-4">Таб 4</a></li>
+    </ul>
+    <div class="tabs-container">
+        <div id="tab-1">
+          <p>Basic for UX Designer</p>
+          <p>10 steps to improve your wireframe</p>
+          <p>A Better Way To Request App Ratings</p>
+          <p>How To Speed Up Your WordPress Website</p>
         </div>
-    
-        <div class="logout" id="logout-icon">
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-sign-out-alt"></i>
-      </div>
-      </div>
-    
+
+        <div id="tab-2">
+            Контент другого таба
+        </div>
+
+        <div id="tab-3">
+            Контент третього таба
+        </div>
+
+        <div id="tab-4">
+            Контент четвертого таба
+        </div>
     </div>
-    
-     <div class="tabs">
-      <button class="tab" onclick="openTab('tab1')">
-        <span class="tab-number">12</span>
-        <span class="tab-text">DONE COURSE</span>
-      </button>
-
-      <button class="tab" onclick="openTab('tab2')">
-        <span class="tab-number">3</span>
-        <span class="tab-text"> UNFINISHED COURSE</span>
-      </button>
-    </div>
-
-    <div id="tab1" class="tab-content">
-      <table class="custom-table" id="table1">
-            <tr>
-                <td>Basic for UX Designer</td>   
-            </tr>
-            <tr>
-                <td>10 steps to improve yor wireframe</td>
-            </tr>
-            <tr>
-                <td>A Better Way To Request App Ratings</td>
-            </tr>
-             <tr>
-                <td>How To Speed Up Your WordPress Website</td>
-            </tr>
-        </table>
-    </div>
-
-    <div id="tab2" class="tab-content">
-      <table class="custom-table" id="table2">
-            <tr>
-                <td>1</td>
-            <tr>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>3</td>
-            </tr>
-        </table>
-    </div>
+  </div>
+ </div>
 
 
-    <div class="tabs">
-      <button class="tab_2" onclick="openTab('tab3')">
-        <span class="tab-number">27</span>
-        <span class="tab-text">ASKING QUESTION</span>
-      </button>
-
-      <button class="tab_2" onclick="openTab('tab4')">
-        <span class="tab-number">7</span>
-        <span class="tab-text"> ANSWERED QUESTION</span>
-      </button>
-    </div>
-
-    <div id="tab3" class="tab-content_2">
-      <table class="custom-table" id="table3">
-            <tr>
-                <td>Basic for UX Designer</td>   
-            </tr>
-            
-        </table>
-    </div>
-
-    <div id="tab4" class="tab-content_2">
-      <table class="custom-table" id="table4">
-            <tr>
-                <td>1</td>
-            <tr>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>3</td>
-            </tr>
-        </table>
-    </div>
-    <script>
-        function openTab(tabName) {
-            var i, tabContent, tables;
-            tabContent = document.getElementsByClassName("tab-content");
-            tables = document.getElementsByClassName("custom-table");
-
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-
-            for (i = 0; i < tables.length; i++) {
-                tables[i].style.display = "none";
-            }
-
-            // Видаляємо клас 'active' з усіх вкладок
-            var tabs = document.getElementsByClassName("tab");
-            for (i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove("active");
-            }
-
-            document.getElementById(tabName).style.display = "block";
-            document.getElementById("table" + tabName.slice(-1)).style.display = "table";
-
-            // Додаємо клас 'active' до вибраної вкладки
-            document.querySelector(".tabs .tab[data-tab='" + tabName + "']").classList.add("active");
-        }
-  </script>
-    
-    <div class="photos-container_2">
-      <img src="img/graph.png" alt="Graph">
-      <img src="img/tab_4.png" alt="Tab 4">
-    </div>
+</div>
 
 </body>
 </html>

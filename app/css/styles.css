@@ -1,54 +1,26 @@
-body {
-    font-family: "Lato", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ecf0f1;
+html,body {
+  min-height: 100%;
+  height: 100%;
+  background-color: #ffffff;
+    font-family: Lato, sans-serif;
+}
+
+main {
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .sidebar {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #34495e;
-    overflow-x: hidden;
-}
-
-.sidebar a {
-    padding: 8px 8px 8px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #88999c;
-    display: block;
-    margin-bottom: 15px; /* Встановіть відступ між кнопками 10 пікселів */
-}
-
-.sidebar a i {
-    margin-right: 10px; /* Відступ справа від значка */
-}
-
-.sidebar a:hover {
-    background-color: #243342;
-}
-
-.main {
-    margin-left: 160px;
-    font-size: 20px;
-    padding: 20px;
-}
-
-@media screen and (max-height: 460px) {
-    .sidebar {
-        padding-top: 15px;
-    }
-    .sidebar {
-        max-width: 100%; /* Максимальна ширина 100% для малих екранів */
-    }
-    .sidebar a {
-        font-size: 16px;
-    }
+  height: 100%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #34495e;
+  overflow-x: hidden;
 }
 
 .profile-info {
@@ -67,6 +39,122 @@ body {
   border-radius: 50%; /* Закруглені кути для кружечка */
   margin-right: 10px; /* Відступ справа від фото */
 }
+
+.btn-toggle {
+  width: 250px; /* Задайте бажаний розмір кнопки по ширині */
+  height: 40px; /* Задайте бажаний розмір кнопки по висоті */
+  padding: .30rem .5rem;
+  font-weight: 400;
+  font-size: 16px;
+  color:  #f9f9f8; /* Колір тексту */;
+  background-color: transparent;
+  border: none;
+  text-align: left; /* Вирівнюємо текст по лівому краю */
+  margin-left: 45px;
+  display: flex;
+  flex-direction: row; /* Змініть напрямок флекс-контейнера на горизонтальний */
+  align-items: center;
+  justify-content: flex-start; /* Вирівняйте зліва */
+  text-align: left; /* Вирівнюйте текст зліва */
+
+}
+
+.rectangle1 {
+  position: absolute;
+  width: 3px;
+  height: 40px;
+  background-color: #fec107;
+  line-height: 25px;
+  z-index: 3;
+  left: 0px;
+  top: 0px;
+  display: none; /* Початково прихований */
+}
+
+.btn-toggle.active1 .rectangle1 {
+  display: block; /* Відображення, якщо є клас active1 у батьківського елемента */
+}
+
+
+.btn-toggle svg path {
+  fill: #9c9997; /* Встановлює колір SVG шляху */
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  margin-left: 0px;
+  color: rgb(255, 255, 255);
+  background-color: #103042;
+}
+.active1 {
+  background-color: #0a2636;
+}
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6 {
+  position: relative;
+  padding-left: 5px; /* Задаємо відступ для тексту */
+  padding-top: 10px; /* Змінено з 15px на 215px для зміщення вниз */
+}
+
+#btn1::before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-house' viewBox='0 0 16 16'%3e%3cpath d='M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z'/%3e%3c/svg%3e");
+  position: absolute;
+  top: 10px; /* Зміщення іконки вгору */
+  left: -30px; /* Зміщення іконки вліво */
+  width: 30px;
+  height: 30px;
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+
+}
+
+#btn2::before {
+  
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-journal-text' viewBox='0 0 16 16'%3e%3cpath d='M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z'/%3e%3cpath d='M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z'/%3e%3cpath d='M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z'/%3e%3c/svg%3e");
+  position: absolute;
+  top: 10px; /* Зміщення іконки вгору */
+  left: -30px; /* Зміщення іконки вліво */
+  width: 30px;
+  height: 30px;
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+#btn3::before {
+  
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-clock' viewBox='0 0 16 16'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0 '/%3e%3cpath d ='M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z'/%3e%3c/svg%3e");
+  position: absolute;
+  top: 10px; /* Зміщення іконки вгору */
+  left: -30px; /* Зміщення іконки вліво */
+  width: 30px;
+  height: 30px;
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+#btn4::before {
+  
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-question-circle' viewBox='0 0 16 16'%3e%3cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16'/%3e%3cpath d ='M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94'/%3e%3c/svg%3e");
+  position: absolute;
+  top: 10px; /* Зміщення іконки вгору */
+  left: -30px; /* Зміщення іконки вліво */
+  width: 30px;
+  height: 30px;
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+#btn5::before {
+  
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-newspaper' viewBox='0 0 16 16'%3e%3cpath d='M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z '/%3e%3cpath d ='M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z'/%3e%3c/svg%3e");
+  position: absolute;
+  top: 10px; /* Зміщення іконки вгору */
+  left: -30px; /* Зміщення іконки вліво */
+  width: 30px;
+  height: 30px;
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -78,11 +166,40 @@ body {
   position: relative;
 }
 
-.icons a,
-.icons i {
-  margin-right: 10px;
+.icon{
+  gap: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
   color: rgb(64, 62, 62);
   text-decoration: none;
+  display: flex; /* Застосовуємо flex для іконки */
+}
+
+.btn {
+  width: 30px; /* Задайте бажаний розмір кнопки по ширині */
+  height: 30px; /* Задайте бажаний розмір кнопки по висоті */
+  font-size: 16px;
+  color:  #f9f9f8; /* Колір тексту */;
+  border: none;
+  display: flex;
+  flex-direction: row; /* Змініть напрямок флекс-контейнера на горизонтальний */
+  margin-right: 10px;
+}
+#btn6, #btn7, #btn8 {
+  width: 40px; /* Ширина кнопок */
+  height: 40px; /* Висота кнопок */
+  border-radius: 50%; /* Робить кнопки квадратними */
+  position: fixed;
+  top: 10px;
+  left: 170px;
+}
+
+#btn7 {
+  left: 190px; /* Відстань між кнопками (30px ширина кнопки + 40px відстань) */
+}
+
+#btn8 {
+  left: 220px; /* Відстань між кнопками (30px ширина кнопки + 40px відстань) */
 }
 
 .logo-container {
@@ -93,18 +210,17 @@ body {
 .logo {
   width: 50px;
   height: 50px;
-  margin-left: 500px;
+  margin-left: 650px;
 }
 
 .search-box {
   display: flex;
- align-items: center;
- margin-left: auto;
+  margin-right: -130px;
 }
 
 .search-box input[type="text"] {
   padding: 0px;
-  right: 0x;
+  right: 0px;
   border: none;
   background-color: #fff;
   border-radius: 5px;
@@ -117,7 +233,7 @@ body {
 }
 
 .panel_2{
-  height: 90px;
+  height: 100px;
   margin-left: 160px;
   display: flex;
   align-items: center;
@@ -167,150 +283,69 @@ body {
 
 .content-container {
   flex: 1; /* Розмір контенту ростягується, щоб заповнити вільне простір під верхньою панеллю */
-  padding: 20px;
+  padding: 10px;
 }
-
-.learn-more {
-  margin-left: 10px;
-  color: rgb(52, 52, 154);
-}
-
-.logout {
+.menu {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin-left: 760px; /* Відступ справа від інших елементів панелі */
-}
-
-.logout i {
-  margin-right: 10px; /* Відступ між значком і текстом (якщо потрібно) */
-}
-
-.menu{
+  background-color: #fefefe;
   display: flex;
-  padding-top: 90px;
-  margin-left: -260px;
+  padding-top: 0px;
+  margin-left: -270px;
 }
 
-.menu ul {
+.btn-toggle-2{
+  font-size: 12px;
+  font-weight: bold;
+  color:  #080801; /* Колір тексту */;
+  background-color: transparent;
+  border: none;
+  text-align: left; /* Вирівнюємо текст по лівому краю */
   display: flex;
-  list-style: none;
-  padding: 0;
-}
-
-.menu ul li {
+  flex-direction: row; /* Змініть напрямок флекс-контейнера на горизонтальний */
+  align-items: center;
+  justify-content: flex-start; /* Вирівняйте зліва */
+  text-align: left; /* Вирівнюйте текст зліва */
+  padding-top: 80px;
   margin-right: 20px;
 }
 
-.menu ul li a {
-  text-decoration: none;
-  font-size: 12px;
-  color: #000000;
-  font-weight: bold;
+.btn-toggle-2.active {
+  text-decoration: underline;
+  text-decoration-thickness: 5px; /* Задаємо товщину лінії */
+  text-decoration-color:#27ae60;
 }
 
-.menu ul li a:hover {
-  color: #13191e;
+.page-content-2{
+  margin-left: 200px;
+  margin-top: 10px;
 }
 
-.menu.slider {
-  position: absolute;
-  height: 5px;
-  background-color: #27ae60;
-  bottom: 0;
-  transition: width 1.3s ease;
-}
-
-
-
-.photos-container_2 {
-  display: flex ; 
-  margin: 20px; 
-  margin-left: 240px;
-}
-
-.photos-container_2.img {
-  width: 320px; 
-  height: 280px; 
-}
-
-.photos-container_2.img {
-  width: 700px; 
-  height: 280px; 
-}
-
-.tabs {
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
-
-.tabs .tab.active {
-  background-color: #eeac8e; /* Колір вибраної вкладки */
-  color: rgb(220, 15, 15) !important; /* Колір тексту вибраної вкладки */
-}
-
-.tabs .tab:hover {
-  background-color: #ddd;
-}
-
-.tab {
-    float: left;
-    display: block;
-    color: #e67333;
-    text-align: center;
-    margin: 20px;
-    margin-left: 200px;
-    margin-right: -167.5px;
-    text-decoration: none;
-    transition: 0.3s;
-    cursor: pointer;
-    font-size: 10px;
-    height: 80px;
-    width: 120px;
-}
-
-.tab-number {
-  font-size:35px; 
-  font-weight: bold; 
-  margin-right: 5px; 
-}
-
-.tab-text {
-  display: block; 
-}
-
-.tab:hover {
-    background-color: #ddd;
-}
-
-.tab-content {
-    display: none;
-}
-
-table { 
-  font-size: 13px;
-    margin-left: 200px;
-    width: 18%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.tab_2 {
+.tabs-container{
+  padding: 20px;
+  border: 1px solid #44bb60
+  }
+.tabs-navigation{
+  margin: 0;
+  height: 20px;
+  }
+.tabs-navigation li{
   float: left;
+  list-style: none;
+  }
+.tabs-navigation li a{
   display: block;
-  color: #e67333;
-  text-align: center;
-  margin: 20px;
-  margin-left: 350px;
-  margin-right: px;
+  margin: 0 1px;
+  padding: 0 15px;
+  height: 20px;
+  color: #44bb7a;
+  font-size: 14px;
+  line-height: 20px;
   text-decoration: none;
-  transition: 0.3s;
-  cursor: pointer;
-  font-size: 10px;
-  height: 80px;
-  width: 120px;
-}
+  border: 1px solid #5d819a
+  }
+.tabs-navigation li.selected a, .tabs-navigation li:hover a{
+  color: #fff;
+  background: #44bb81
+  }
