@@ -318,34 +318,170 @@ main {
 }
 
 .page-content-2{
-  margin-left: 200px;
+  display: block;
+  margin-left: 160px;
   margin-top: 10px;
 }
 
 .tabs-container{
+  display: block;
+  overflow: hidden;
+  font-family:  Arial, sans-serif;
+  flex-direction: column;
   padding: 20px;
-  border: 1px solid #44bb60
+  border: 1px solid #1d201e;
+  width: 382px;
+  margin-left: 33px;
   }
 .tabs-navigation{
+  display: block;
   margin: 0;
-  height: 20px;
+  height: 80px;
+  
   }
 .tabs-navigation li{
+  display: block;
   float: left;
   list-style: none;
   }
 .tabs-navigation li a{
   display: block;
+  align-items: center;
+  justify-content: center;
   margin: 0 1px;
-  padding: 0 15px;
-  height: 20px;
-  color: #44bb7a;
+  padding: 0 40px;
+  height: 80px;
+  color: #b3a49b;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 40px;
   text-decoration: none;
-  border: 1px solid #5d819a
+  /*border: 1px solid #000000;*/
   }
 .tabs-navigation li.selected a, .tabs-navigation li:hover a{
-  color: #fff;
-  background: #44bb81
+  display: block;
+  color: #c44c0b;
+  background: #fff;
+  border: 1px solid #000000;
+
   }
+
+  .logout {
+    display: flex;
+    align-items: center;
+    
+  }
+   
+#btn_pencil{
+  margin-left: 670px;
+}
+
+.number {
+  display: block;
+  font-size: 40px; /* Збільшений розмір числа */
+  font-weight: bold; /* Жирний стиль */
+  margin-left: 20px;
+}
+
+.number-2 {
+  display: block;
+  font-size: 40px; /* Збільшений розмір числа */
+  font-weight: bold; /* Жирний стиль */
+  margin-left: 45px;
+}
+
+.title {
+  font-size: 12px; /* Розмір тексту заголовка */
+  margin-top: 0px; /* Зсув вгору для збігу з числом */
+}
+
+.tabs-navigation-2{
+  display: block;
+  margin: 0;
+  height: 80px;
+  margin-left: 420px;
+  margin-top: -80px;
+  }
+.tabs-navigation-2 li{
+  float: left;
+  list-style: none;
+  }
+.tabs-navigation-2 li a{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1px;
+  padding: 0 40px;
+  height: 80px;
+  color: #b3a49b;
+  font-size: 14px;
+  line-height: 40px;
+  text-decoration: none;
+ /* border: 1px solid #000000;*/
+  }
+.tabs-navigation-2 li.selected a, .tabs-navigation-2 li:hover a{
+  display: block;
+  color: #c40bbb;
+  background: #fff;
+  border: 1px solid #000000;
+}
+
+ .tabs-container-2{
+   display: block;
+   overflow: hidden;
+   font-family:  Arial, sans-serif;
+   padding: 20px;
+   border: 1px solid #1d201e;
+   width: 412px;
+   margin-left: 453px;
+   margin-top: -202px;
+ }
+
+ .tabs-navigation-3{
+  display: block;
+  margin: 0;
+  height: 80px;
+  margin-left: 620px;
+  margin-top: -80px;
+ }
+.tabs-navigation-3 li{
+  display: block;
+  float: left;
+  list-style: none;
+  padding-left: 36px;
+  margin-right: -36px;
+}
+.tabs-navigation-3 li a{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1px;
+  padding: 0 40px;
+  height: 80px;
+  color: #b3a49b;
+  font-size: 14px;
+  line-height: 40px;
+  text-decoration: none;
+  /*border: 1px solid #000000;*/
+  }
+.tabs-navigation-3 li.selected a, .tabs-navigation-3 li:hover a{
+  display: block;
+  color: #0bc471;
+  background: #fff;
+  border: 1px solid #000000;
+}
+
+.tabs-container-3{
+    overflow: hidden;
+    padding: 20px;
+    font-family:  Arial, sans-serif;
+    border: 1px solid #1d201e;
+    width: 370px;
+    margin-left: 902px;
+    margin-top: -202px;
+}
+
+#tab-1, #tab-2,#tab-3,#tab-4,#tab-5,#tab-6 p{
+  display: block;  
+  border-bottom: 1px solid black; /* Додаємо підкреслення */
+  width: 400px;
+}

@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/code.js"></script>
   </head>
 
@@ -82,17 +83,59 @@
         <button class="btn-toggle-2" id="btn2_5" onclick="showContent(4)"> <div class="rectangle2"></div> NEWS </button>
         <button class="btn-toggle-2" id="btn2_6" onclick="showContent(5)"> <div class="rectangle2"></div> ACTIVITY </button>
         <button class="btn-toggle-2" id="btn2_7" onclick="showContent(6)"> <div class="rectangle2"></div> FRIENDS </button>
+      
+        <div class="logout" id="logout-icon">
+          <button class="btn" id="btn_pencil">
+            <span class = "icon" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg>
+            </span>
+        </button>
+  
+        <button class="btn" id="btn_out">
+          <span class = "icon" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+            </svg>
+          </span>
+      </button>
+        </div>
+
       </div>
     </div>
 
 <div id="page-content3" class="page-content-2" style="display: none;">
   <div id="tabs">
     <ul class="tabs-navigation">
-        <li><a href="#tab-1">DONE COURSE</a></li>
-        <li><a href="#tab-2">UNFINISHED COURSE</a></li>
-        <li><a href="#tab-3">Таб 3</a></li>
-        <li><a href="#tab-4">Таб 4</a></li>
+        <li><a href="#tab-1">         
+          <span class="number">12</span>
+          <p class="title">DONE COURSE</p></a></li>
+        <li><a href="#tab-2">
+          <span class="number-2">7</span>
+          <p class="title">UNFINISHED COURSE</p></a></li>
     </ul>
+
+    <ul class="tabs-navigation-2">
+      <li><a href="#tab-3">         
+        <span class="number">27</span>
+        <p class="title">ASKING QUESTION</p></a></li>
+      <li><a href="#tab-4">
+        <span class="number-2">17</span>
+        <p class="title">ANSWERED QUESTION</p></a></li>
+    </ul>
+
+  <ul class="tabs-navigation-3">
+    <li><a href="#tab-5">         
+      <span class="number">19</span>
+      <p class="title">FOLLOWING EXAMS</p></a></li>
+    <li><a href="#tab-6">
+      <span class="number">88</span>
+      <p class="title">DONE EXAMS</p></a></li>
+  </ul>
+
     <div class="tabs-container">
         <div id="tab-1">
           <p>Basic for UX Designer</p>
@@ -102,17 +145,38 @@
         </div>
 
         <div id="tab-2">
-            Контент другого таба
-        </div>
-
-        <div id="tab-3">
-            Контент третього таба
-        </div>
-
-        <div id="tab-4">
-            Контент четвертого таба
+            You have unfinished course
         </div>
     </div>
+
+    
+    <div class="tabs-container-2">
+      <div id="tab-3">
+        <p>How to make good logo?</p>
+        <p>What are the best mobili apps for...</p>
+        <p>What's the difference between UI and ...</p>
+        <p>What logos include hidden messages ...</p>    
+      </div>
+
+      <div id="tab-4">
+          Контент четвертого таба
+      </div>
+    </div>
+
+    <div class="tabs-container-3">
+      <div id="tab-5">
+        <p>Junior web designer</p>
+        <p>Which is the best way to pass the PMP ...</p>
+        <p>What are great examples of viral UX/UI ...</p>
+        <p>Why is consistency important in design?</p>    
+      </div>
+
+      <div id="tab-6">
+          Контент шостого таба
+      </div>
+    </div>
+    
+
   </div>
  </div>
 
