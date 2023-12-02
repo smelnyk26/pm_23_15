@@ -117,3 +117,24 @@ $(document).ready(function () {
   }).filter(':first').click();
 
 });
+
+/*для 2 вкладення*/
+function activateTab(tab) {
+  var tabs = tab.parentNode.getElementsByTagName('p');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+  }
+  tab.classList.add('active');
+}
+
+ /*для show more*/
+function toggleContent(id) {
+  var element = document.getElementById(id);
+  element.classList.toggle("active");
+}
+
+function showMore() {
+  var content = document.getElementById("tab-5");
+  content.classList.toggle("show-more");
+}
+
