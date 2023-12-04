@@ -128,7 +128,7 @@ function activateTab(tab) {
 }
 
  /*для show more*/
-function toggleContent(id) {
+/*function toggleContent(id) {
   var element = document.getElementById(id);
   element.classList.toggle("active");
 }
@@ -136,5 +136,12 @@ function toggleContent(id) {
 function showMore() {
   var content = document.getElementById("tab-5");
   content.classList.toggle("show-more");
-}
+}*/
 
+function changeColor(tab) {
+  var tabs = tab.parentNode.getElementsByTagName('div');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+  }
+  tab.classList.add('active');
+}
