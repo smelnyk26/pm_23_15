@@ -600,6 +600,8 @@ main {
 
 
 .down-content{
+  display: block;
+  overflow: hidden;
   height: 350px;
   width: 400px;
   margin-left: 35px;
@@ -706,6 +708,8 @@ canvas {
 }
 
 .right_content{
+  display: block;
+  overflow: hidden;
   margin-left: 445px;
   height: 350px;
   width: 830px;

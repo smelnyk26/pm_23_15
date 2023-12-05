@@ -121,6 +121,7 @@ $(document).ready(function () {
 /*для 2 вкладення*/
 function activateTab(tab) {
   var tabs = tab.parentNode.getElementsByTagName('p');
+
   for (var i = 0; i < tabs.length; i++) {
     tabs[i].classList.remove('active');
   }
@@ -145,3 +146,12 @@ function changeColor(tab) {
   }
   tab.classList.add('active');
 }
+
+function showMessage() {
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
+  }
