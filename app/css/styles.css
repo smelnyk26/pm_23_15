@@ -491,6 +491,7 @@ main {
   width: 400px;
 }
 
+
 .tabs-container-2 p {
   cursor: pointer;
   margin: 0;
@@ -739,6 +740,7 @@ canvas {
   height: 60px; /* Висота блоку */
   padding: 10px;
 }
+
 
 .image{
   width: 35px; /* Ширина фото користувача */

@@ -1,0 +1,12 @@
+{
+    "labels": ["12", "1", "14", "15", "16", "17", "18", "19", "1","21","22"],
+     "datasets": [{
+         "data": [20, 25, 15, 4, 16, 1, 50, 3, 24, 1, 47], 
+         "borderColor": "green",
+         "backgroundColor": "transparent",
+         "pointBackgroundColor": "green",
+         "pointBorderColor": "transparent",
+         "pointRadius": 5,
+         "pointHoverRadius": 8
+     }]
+ }
